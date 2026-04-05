@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Astral — The Gann Oracle{% endblock %}</title>
+  <meta name="description" content="{% block description %}Analisi Gann, cicli planetari, 100 anni di storia. Confluenze multi-sistema per trader seri.{% endblock %}" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <div class="stars"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-glyph">✦</span>
+        <span class="nav-name">ASTRAL</span>
+      </a>
+      <div class="nav-links">
+        <a href="/methodology">Metodologia</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/dashboard" class="nav-cta">Apri l'Oracolo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="nav-glyph">✦</span>
+          <span class="nav-name">ASTRAL</span>
+        </div>
+        <p class="footer-tagline">The Gann Oracle · Sacred Geometry · Planetary Cycles</p>
+      </div>
+      <div class="footer-col">
+        <h4>Piattaforma</h4>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/methodology">Metodologia</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Risorse</h4>
+        <a href="/api/health">API Health</a>
+        <a href="https://github.com/astral4201/Astral-" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><strong>Disclaimer legale —</strong> Le analisi fornite da Astral sono elaborate a scopo informativo ed educativo. Non costituiscono consulenza finanziaria, investimento consigliato, o sollecitazione all'acquisto/vendita di strumenti finanziari. Il trading comporta rischi significativi di perdita del capitale. Le performance passate non garantiscono risultati futuri. L'astrologia finanziaria e i metodi di Gann sono strumenti analitici non scientificamente validati. Opera sempre con la supervisione di un consulente finanziario autorizzato.</p>
+      <p class="footer-quote">« Gann non era un trader meccanico — era un CACCIATORE di cicli. »</p>
+    </div>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

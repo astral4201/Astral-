@@ -69,18 +69,75 @@ class AnalyzeRequest(BaseModel):
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request) -> HTMLResponse:
-    """Serve the main oracle page."""
+async def landing(request: Request) -> HTMLResponse:
+    """Public landing page."""
     return templates.TemplateResponse(
-        request,
-        "index.html",
-        {"version": __version__},
+        request, "landing.html", {"version": __version__}
+    )
+
+
+@app.get("/dashboard", response_class=HTMLResponse)
+async def dashboard(request: Request) -> HTMLResponse:
+    """The interactive oracle dashboard."""
+    return templates.TemplateResponse(
+        request, "dashboard.html", {"version": __version__}
+    )
+
+
+@app.get("/methodology", response_class=HTMLResponse)
+async def methodology(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request, "methodology.html", {"version": __version__}
+    )
+
+
+@app.get("/pricing", response_class=HTMLResponse)
+async def pricing(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request, "pricing.html", {"version": __version__}
     )
 
 
 @app.get("/api/health")
 async def health() -> dict:
     return {"status": "ok", "version": __version__}
+
+
+@app.get("/api/ohlcv")
+async def ohlcv(
+    ticker: str = Query(..., min_length=1),
+    lookback: int = Query(365, ge=30, le=3650),
+) -> dict:
+    """Return OHLCV candle data for TradingView Lightweight Charts."""
+    from datetime import timedelta
+    from astral.market.fetcher import MarketFetcher
+
+    fetcher = MarketFetcher()
+    end = date.today()
+    start = end - timedelta(days=lookback)
+    try:
+        df = fetcher.get_ohlcv(ticker.upper().strip(), start=start, end=end + timedelta(days=1))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Errore fetch: {e}")
+
+    if df is None or df.empty:
+        raise HTTPException(status_code=404, detail=f"Nessun dato per {ticker}")
+
+    candles = []
+    for idx, row in df.iterrows():
+        ts = idx.date().isoformat() if hasattr(idx, "date") else str(idx)[:10]
+        try:
+            candles.append({
+                "time": ts,
+                "open": float(row["Open"]),
+                "high": float(row["High"]),
+                "low": float(row["Low"]),
+                "close": float(row["Close"]),
+            })
+        except (KeyError, ValueError, TypeError):
+            continue
+
+    return {"ticker": ticker.upper().strip(), "candles": candles}
 
 
 @app.post("/api/analyze")

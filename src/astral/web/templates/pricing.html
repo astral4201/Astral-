@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Pricing — Astral{% endblock %}
+{% block body_class %}doc-page{% endblock %}
+
+{% block content %}
+<article class="doc-article">
+  <header class="doc-header">
+    <p class="doc-eyebrow">✦ PRICING</p>
+    <h1>Scegli il Tuo Livello</h1>
+    <p class="doc-lead">Astral è open source. Il branch attuale è gratuito per sempre e installabile in locale. I piani a pagamento offrono accesso hosted, dati premium e funzionalità avanzate.</p>
+  </header>
+
+  <div class="pricing-grid full">
+    <div class="price-card">
+      <h3>FREE · OPEN SOURCE</h3>
+      <div class="price">€0<span>/sempre</span></div>
+      <p class="price-desc">Installa dal GitHub e gira sul tuo computer.</p>
+      <ul>
+        <li>✓ Motore Gann completo</li>
+        <li>✓ Efemeride Swiss Ephemeris</li>
+        <li>✓ Pattern storici 100 anni</li>
+        <li>✓ Interfaccia web locale</li>
+        <li>✓ CLI + API REST</li>
+        <li>✓ Export JSON</li>
+        <li>✗ Hosting gestito</li>
+        <li>✗ Dati real-time live</li>
+        <li>✗ Alert automatici</li>
+      </ul>
+      <a href="https://github.com/astral4201/Astral-" target="_blank" rel="noopener" class="btn-ghost full">⬇ Clona da GitHub</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="badge-popular">PIÙ POPOLARE</div>
+      <h3>PRO · HOSTED</h3>
+      <div class="price">€49<span>/mese</span></div>
+      <p class="price-desc">La piattaforma sempre disponibile, nessuna installazione.</p>
+      <ul>
+        <li>✓ Tutto di FREE</li>
+        <li>✓ Accesso web hosted</li>
+        <li>✓ Dati macro FRED inclusi</li>
+        <li>✓ Storico 100 anni precaricato</li>
+        <li>✓ Alert su date critiche</li>
+        <li>✓ Watchlist illimitate</li>
+        <li>✓ Export PDF</li>
+        <li>✓ Storico analisi salvate</li>
+        <li>✓ Supporto email</li>
+      </ul>
+      <a href="mailto:hello@astral.dev?subject=Astral PRO" class="btn-primary full">Scegli PRO</a>
+    </div>
+
+    <div class="price-card">
+      <h3>INSTITUTIONAL</h3>
+      <div class="price">€199<span>/mese</span></div>
+      <p class="price-desc">Per fondi, prop firm e analisti professionisti.</p>
+      <ul>
+        <li>✓ Tutto di PRO</li>
+        <li>✓ API REST con rate limit alto</li>
+        <li>✓ Backtest storici custom</li>
+        <li>✓ Report personalizzati</li>
+        <li>✓ Webhook per alert</li>
+        <li>✓ SLA 99.9%</li>
+        <li>✓ Supporto prioritario</li>
+        <li>✓ Onboarding 1-on-1</li>
+        <li>✓ White-label disponibile</li>
+      </ul>
+      <a href="mailto:hello@astral.dev?subject=Astral INSTITUTIONAL" class="btn-ghost full">Contattaci</a>
+    </div>
+  </div>
+
+  <section class="doc-section" style="margin-top:60px">
+    <h2>Domande sul pricing</h2>
+    <details class="faq-item">
+      <summary>Perché un piano a pagamento se è open source?</summary>
+      <p>Il codice è libero, ma hosting, dati in tempo reale, server di calcolo e supporto costano. I piani PRO e INSTITUTIONAL finanziano lo sviluppo continuo del progetto e garantiscono che il codice rimanga aperto.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Posso passare da un piano all'altro?</summary>
+      <p>Sì, in qualsiasi momento. Upgrade e downgrade sono prorated e senza penale.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Offrite prove gratuite di PRO?</summary>
+      <p>Puoi usare la versione FREE illimitatamente in locale. Il piano PRO include 14 giorni di prova senza carta di credito.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Accettate Bitcoin?</summary>
+      <p>Sì, su piano INSTITUTIONAL. Per PRO accettiamo carte di credito, SEPA e Stripe.</p>
+    </details>
+  </section>
+
+  <div class="doc-cta">
+    <a href="/dashboard" class="btn-primary large">✦ Inizia Gratis Ora</a>
+  </div>
+</article>
+{% endblock %}

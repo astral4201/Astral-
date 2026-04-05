@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Metodologia — Astral{% endblock %}
+{% block body_class %}doc-page{% endblock %}
+
+{% block content %}
+<article class="doc-article">
+  <header class="doc-header">
+    <p class="doc-eyebrow">◇ METODOLOGIA</p>
+    <h1>I Cinque Mondi dell'Analisi</h1>
+    <p class="doc-lead">Astral non è un indicatore tecnico. È un motore di confluenza che legge i mercati attraverso cinque lenti diverse, cercando i momenti in cui più dimensioni concordano sulla stessa direzione.</p>
+  </header>
+
+  <section id="gann" class="doc-section">
+    <h2>◇ Geometria di Gann</h2>
+    <p>William Delbert Gann (1878-1955) sviluppò un sistema matematico e geometrico per prevedere i mercati finanziari. Predisse il massimo del 1929 e il minimo del 1932 con mesi di anticipo, usando metodi che rivelò solo parzialmente nei suoi libri.</p>
+    <h3>Cosa calcola Astral</h3>
+    <ul>
+      <li><strong>Square of Nine —</strong> i livelli cardinali e ordinali derivati dalla spirale di Gann, la radice quadrata del prezzo e i suoi multipli angolari di 45°, 90°, 180°, 270° e 360°.</li>
+      <li><strong>Square of 144 —</strong> la griglia matrice 144×144, prodotto di 12² per 12², usata da Gann per il timing temporale.</li>
+      <li><strong>Angoli di Gann —</strong> fan di inclinazione 1×1, 2×1, 4×1, 8×1 e reciproci, proiettati da ogni pivot significativo.</li>
+      <li><strong>Cicli Gann —</strong> 30, 45, 60, 90, 120, 144, 180, 270, 360 giorni dal pivot.</li>
+      <li><strong>Quadratura Tempo-Prezzo —</strong> il punto in cui il movimento di prezzo in unità eguaglia il tempo trascorso in giorni. Secondo Gann, il momento di inversione più affidabile.</li>
+    </ul>
+  </section>
+
+  <section id="planetary" class="doc-section">
+    <h2>☉ Cicli Planetari</h2>
+    <p>Gann scriveva che "tutto nell'universo si muove in cicli precisi" e che "i pianeti rispondono alle stesse leggi armoniche dei mercati". Astral usa Swiss Ephemeris — lo stesso motore di effemeridi usato dai software astronomici professionali — per calcolare le posizioni planetarie al secondo d'arco.</p>
+    <h3>Cosa tracciamo</h3>
+    <ul>
+      <li><strong>Dieci corpi celesti:</strong> Sole, Luna, Mercurio, Venere, Marte, Giove, Saturno, Urano, Nettuno, Plutone.</li>
+      <li><strong>Cinque aspetti classici:</strong> congiunzione (0°), sestile (60°), quadratura (90°), trigono (120°), opposizione (180°), con orbe configurabili.</li>
+      <li><strong>Retrogradazioni:</strong> inversioni apparenti del moto planetario — Mercurio retrogrado coincide storicamente con revisioni nei mercati tecnologici.</li>
+      <li><strong>Eclissi:</strong> finestra di impatto di 90 giorni. Le eclissi solari e lunari sono storicamente associate a cambi di regime.</li>
+      <li><strong>Fasi lunari:</strong> otto fasi, dal novilunio al plenilunio, con correlazioni statisticamente verificate su sentiment di breve periodo.</li>
+      <li><strong>Cicli sinodici:</strong> Giove-Saturno (20 anni), Saturno-Urano (~45 anni), Urano-Nettuno (~172 anni) — i grandi cicli dei regimi economici.</li>
+    </ul>
+  </section>
+
+  <section id="history" class="doc-section">
+    <h2>⧖ Storia dei Mercati</h2>
+    <p>"La storia non si ripete, ma fa rima" — Mark Twain. Astral tiene traccia di oltre 100 anni di pattern storici e ti avvisa quando la data corrente coincide con un anniversario di eventi significativi.</p>
+    <h3>Pattern riconosciuti</h3>
+    <ul>
+      <li><strong>Onde di Kondratieff —</strong> i cicli economici lunghi (40-60 anni) suddivisi in Primavera, Estate, Autunno, Inverno.</li>
+      <li><strong>Ciclo presidenziale USA —</strong> l'anomalia statistica dei 4 anni che correla con il calendario elettorale americano.</li>
+      <li><strong>Pattern decennale —</strong> il comportamento medio degli anni che terminano in 0, 1, 2, 3... per ogni decade.</li>
+      <li><strong>Stagionalità —</strong> "Sell in May", rally di Natale, effetto gennaio, Halloween indicator.</li>
+      <li><strong>Anniversari di crisi —</strong> 1929, 1987, 2000, 2008, 2020. Ogni anno Astral ti segnala se sei a X anni esatti da un pivot storico.</li>
+      <li><strong>Cicli biblici —</strong> Shemitah (anno 7) e Giubileo (anno 50) del calendario ebraico, storicamente correlati con crisi finanziarie.</li>
+    </ul>
+  </section>
+
+  <section id="macro" class="doc-section">
+    <h2>◐ Dati Macro</h2>
+    <p>Nessuna analisi ciclica è completa senza il contesto macro. Astral si collega direttamente alla Federal Reserve Economic Database (FRED) per scaricare i dati ufficiali della Fed.</p>
+    <ul>
+      <li><strong>Fed Funds Rate —</strong> il tasso di riferimento americano.</li>
+      <li><strong>CPI YoY —</strong> inflazione anno su anno.</li>
+      <li><strong>M2 Money Supply —</strong> la massa monetaria, indicatore anticipatore.</li>
+      <li><strong>Yield Curve 10Y-2Y —</strong> lo spread tra decennale e biennale. Quando è negativo (inversione), storicamente una recessione è entro 18 mesi.</li>
+      <li><strong>VIX —</strong> l'indice della paura.</li>
+      <li><strong>DXY —</strong> l'indice del dollaro.</li>
+    </ul>
+  </section>
+
+  <section id="esoteric" class="doc-section">
+    <h2>✦ Componente Esoterica</h2>
+    <p>Gann studiò cabala, numerologia, gematria e tarocchi. Credeva che i numeri avessero significati vibrazionali e che certi livelli di prezzo "risuonassero" con archetipi antichi. Astral include questa dimensione per completezza filosofica — considerala un layer narrativo, non predittivo.</p>
+    <ul>
+      <li><strong>Fibonacci —</strong> livelli 0.236, 0.382, 0.5, 0.618, 0.786 sulle proiezioni dei pivot.</li>
+      <li><strong>Numerologia —</strong> somma delle cifre della data e del prezzo, radice numerica, significato vibrazionale.</li>
+      <li><strong>Gematria —</strong> corrispondenze tra numeri e Sephirot dell'albero della vita cabalistico.</li>
+      <li><strong>Tarocchi —</strong> assegnazione di un arcano maggiore al momento di mercato in base a score, direzione e segnali attivi.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section doc-quote">
+    <blockquote>
+      "Il tempo è più importante del prezzo. Quando il tempo è scaduto, il prezzo deve invertire."
+      <cite>— W.D. Gann</cite>
+    </blockquote>
+  </section>
+
+  <div class="doc-cta">
+    <a href="/dashboard" class="btn-primary large">✦ Prova l'Oracolo</a>
+  </div>
+</article>
+{% endblock %}
