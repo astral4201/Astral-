@@ -72,8 +72,9 @@ class AnalyzeRequest(BaseModel):
 async def index(request: Request) -> HTMLResponse:
     """Serve the main oracle page."""
     return templates.TemplateResponse(
+        request,
         "index.html",
-        {"request": request, "version": __version__},
+        {"version": __version__},
     )
 
 
