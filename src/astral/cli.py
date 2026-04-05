@@ -171,6 +171,21 @@ def planets(target_date: str | None) -> None:
         console.print(asp_table)
 
 
+@cli.command()
+@click.option("--host", default="127.0.0.1", help="Interfaccia di ascolto.")
+@click.option("--port", default=8000, type=int, help="Porta.")
+@click.option("--reload", is_flag=True, help="Auto-reload in sviluppo.")
+def serve(host: str, port: int, reload: bool) -> None:
+    """Avvia l'interfaccia web dell'Oracolo (http://host:port)."""
+    from astral.web.app import run
+
+    console.print(
+        f"[gold1]✦ L'Oracolo di Astral si risveglia su "
+        f"http://{host}:{port} ✦[/gold1]"
+    )
+    run(host=host, port=port, reload=reload)
+
+
 def main() -> None:
     cli()
 

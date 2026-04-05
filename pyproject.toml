@@ -17,6 +17,9 @@ dependencies = [
     "click>=8.1",
     "pyyaml>=6.0",
     "python-dotenv>=1.0",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "jinja2>=3.1",
 ]
 
 [project.optional-dependencies]
@@ -27,3 +30,6 @@ astral = "astral.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"astral.web" = ["templates/*.html", "static/*.css", "static/*.js"]

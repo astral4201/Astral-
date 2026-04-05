@@ -1,0 +1,1 @@
+"""Astral web interface (FastAPI)."""
