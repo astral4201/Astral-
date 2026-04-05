@@ -1,0 +1,47 @@
+# Astral - Gann Trading Analyzer Configuration
+
+gann:
+  # Scale factor: converts time units to price units
+  # Adjust per instrument (e.g., SPX ~5.0, BTC ~100.0, GOLD ~1.5)
+  default_scale_factor: 1.0
+  cycle_days: [30, 45, 60, 90, 120, 144, 180, 210, 240, 270, 300, 330, 360]
+
+planetary:
+  # Orb tolerances in degrees for aspect detection
+  orbs:
+    conjunction: 8.0
+    sextile: 6.0
+    square: 8.0
+    trine: 8.0
+    opposition: 8.0
+  # Eclipse impact window in days
+  eclipse_window_days: 90
+
+market:
+  # Ticker symbol mappings
+  symbols:
+    SPX: "^GSPC"
+    DJIA: "^DJI"
+    NDX: "^IXIC"
+    GOLD: "GC=F"
+    OIL: "CL=F"
+    BTC: "BTC-USD"
+  # Default lookback period in days for analysis
+  default_lookback_days: 365
+  pivot_window: 20
+
+macro:
+  # FRED series IDs
+  series:
+    fed_funds: "FEDFUNDS"
+    cpi: "CPIAUCSL"
+    ppi: "PPIACO"
+    pce: "PCEPI"
+    m2: "M2SL"
+    t10y2y: "T10Y2Y"
+    t10y3m: "T10Y3M"
+    dxy: "DTWEXBGS"
+    vix: "VIXCLS"
+
+output:
+  language: "it"  # Italian (Gann Oracle persona)
